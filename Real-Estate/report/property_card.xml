@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<odoo>
+    <template id="report_property_id_card">
+        <t t-foreach="docs" t-as="property">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                            <strong><span t-field="property.name"/></strong>
+                        </h2>
+                        <div>
+                            <strong>Salesman: </strong>
+                            <span t-field="property.seller_id"/>
+                        </div>
+                        <div>
+                            <strong>Expected Price: </strong>
+                            <span t-field="property.expected_price"/>
+                        </div>
+                        <div>
+                            <strong>Status: </strong>
+                            <span t-field="property.state"/>
+                        </div>
+                        <br/><br/>
+                        <table class="table">
+                            <thead>
+                                <tr style="background-color:#808080;color:white;">
+                                    <th>Price</th>
+                                    <th>Partner</th>
+                                    <th>Validity (days)</th>
+                                    <th>Deadline</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="offers" t-value="property.mapped('offer_ids')"/>
+                                <tr t-if="not offers">
+                                  <td colspan="5" style="text-align:center;border:1px solid black;padding:5px;">
+                                    No offers yet!!
+                                  </td>
+                                </tr>
+                                <tr t-foreach="offers" t-as="offer">
+                                    <td>
+                                        <span t-field="offer.price"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="offer.partner_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="offer.validity"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="offer.date_deadline"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="offer.status"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/><br/>
+                        <div class="row">
+                              <table class="table table-condensed" style="border: 3px solid black !important;width=100%;">
+                                  <tr>
+                                      <td width="50%" style="vertical-align:middle;">
+                                          <p style="text-align:center;">
+                                              <img t-if="not property.image" t-att-src="'/web/static/img/placeholder.png'" height="340" border="1" width="300"/>
+                                              <img t-if="property.image" t-att-src="'data: image/png;base64, %s' %to_text(property.image)" height="340" border="1" width="300"/>
+                                          </p>
+                                      </td>
+                                      <td width="50%">
+                                          <table class="col-md-12">
+                                              <tr style="background-color:#808080;color:white;">
+                                                  <td colspan="2" class="text-center">
+                                                      <h3><b><span t-field="property.name"/></b></h3>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      <span><strong>Description: </strong></span>
+                                                  </td>
+                                                  <td>
+                                                      <span t-field="property.description"/>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      <span><strong>Bedrooms: </strong></span>
+                                                  </td>
+                                                  <td>
+                                                      <span t-field="property.bedrooms"/>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      <span><strong>Living Area (sqm): </strong></span>
+                                                  </td>
+                                                  <td>
+                                                      <span t-field="property.living_area"/>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      <span><strong>Facades: </strong></span>
+                                                  </td>
+                                                  <td>
+                                                      <span t-field="property.facades"/>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      <span><strong>Garage: </strong></span>
+                                                  </td>
+                                                  <td t-if="property.garage">
+                                                      <span>Available</span>
+                                                  </td>
+                                                  <td t-if="not property.garage">
+                                                      <span>Not Available</span>
+                                                  </td>
+                                              </tr>
+                                              <tr>
+                                                  <td>
+                                                      <span><strong>Garden: </strong></span>
+                                                  </td>
+                                                  <td t-if="property.garden">
+                                                      <span>Available</span>
+                                                  </td>
+                                                  <td t-if="not property.garden">
+                                                      <span>Not Available</span>
+                                                  </td>
+                                              </tr>
+                                              <tr t-if="property.garden">
+                                                  <td>
+                                                      <span><strong>Garden Area (sqm): </strong></span>
+                                                  </td>
+                                                  <td>
+                                                      <span t-field="property.garden_area"/>
+                                                  </td>
+                                              </tr>
+                                              <tr t-if="property.garden">
+                                                  <td>
+                                                      <span><strong>Garden Orientation: </strong></span>
+                                                  </td>
+                                                  <td>
+                                                      <span t-field="property.garden_orientation"/>
+                                                  </td>
+                                              </tr>
+                                          </table>
+                                      </td>
+                                  </tr>
+                              </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

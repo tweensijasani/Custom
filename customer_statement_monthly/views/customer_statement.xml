@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="customer_statement_tree_view">
+        <field name="name">customer.statement.tree.view</field>
+        <field name="model">customer.statement</field>
+        <field name="arch" type="xml">
+            <tree string="Monthly Customer Statement">
+                <header>
+                    <button name="create_line" string="Reload" type="object" class="btn-primary"/>
+                </header>
+                <field name="name"/>
+                <field name="from_date"/>
+                <field name="to_date"/>
+                <field name="partner_id"/>
+                <field name="opening_balance"/>
+                <field name="total_debit"/>
+                <field name="total_credit"/>
+                <field name="closing_balance"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="customer_statement_form_view" model="ir.ui.view">
+        <field name="name">customer.statement.form.view</field>
+        <field name="model">customer.statement</field>
+        <field name="arch" type="xml">
+            <form string="Monthly Customer Statement">
+                <header>
+                    <button name="create_line" string="Reload" type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" string="Name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <label for="month" string="Month"/>
+                            <div name="month">
+                                <field name="month" class="oe_inline"/>
+                                -
+                                <field name="year" class="oe_inline" options="{'format': 0}"/>
+                            </div>
+                            <field name="partner_id" string="Customer"/>
+                            <field name="opening_balance"/>
+                        </group>
+                        <group>
+                            <label for="from_date" string="Duration"/>
+                            <div>
+                                <field name="from_date" class="oe_inline" readonly="True" force_save="1"/>
+                                -
+                                <field name="to_date" class="oe_inline" readonly="True" force_save="1"/>
+                            </div>
+                            <field name="closing_balance"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="statement_lines" string="Statements" readonly="True" force_save="1">
+                            <tree>
+                                <field name="date"/>
+                                <field name="name"/>
+                                <field name="debit" sum="Total Debit"/>
+                                <field name="credit" sum="Total Credit"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="customer_statements_search_view" model="ir.ui.view">
+        <field name="name">customer.statement.search</field>
+        <field name="model">customer.statement</field>
+        <field name="arch" type="xml">
+            <search string="Search Customer Statement">
+                <field name="partner_id"/>
+                <field name="name"/>
+                <field name="month"/>
+                <field name="year"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="Partner" name="group_by_partner" domain="[]" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Month" name="month" domain="[]" context="{'group_by': 'month'}"/>
+                    <filter string="Year" name="year" domain="[]" context="{'group_by': 'year'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="customer_statement_action" model="ir.actions.act_window">
+        <field name="name">Monthly Customer Statement</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">customer.statement</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="customer_statement_menu"
+              name="Monthly Customer Statement"
+              parent="account.menu_finance_reports"
+              action="customer_statement_action"
+              groups="customer_statement_monthly.group_customer_statement"
+              sequence="0"/>
+
+</odoo>
