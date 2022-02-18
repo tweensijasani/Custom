@@ -23,7 +23,7 @@ model.run_scheduler_daily()
             <field name="code">
 model.run_scheduler_onetime()
             </field>
-            <field eval="False" name="active"/>
+            <field eval="True" name="active"/>
             <field name="interval_number">1</field>
             <field name="interval_type">days</field>
             <field name="numbercall">1</field>

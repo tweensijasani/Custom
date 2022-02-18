@@ -9,7 +9,7 @@ from datetime import datetime, date
 class CustomerStatement(models.Model):
     _name = 'customer.statement'
     _description = 'monthly customer statement'
-    _order = 'name, from_date desc'
+    _order = 'from_date desc,name'
     _inherit = ['mail.thread', 'mail.activity.mixin', 'utm.mixin']
 
     name = fields.Char(string='Name', default=lambda self: _('New'), compute='_compute_name', store=True)
@@ -212,35 +212,36 @@ class CustomerStatement(models.Model):
 
     @api.model
     def run_scheduler_onetime(self):
-        month = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
-        year = ['2019', '2020', '2021']
+        start_year = self.env['account.move'].search([], order="invoice_date asc", limit=1)
+        year = []
+        for i in range(int(start_year.invoice_date.strftime('%Y')), int(datetime.now().strftime('%Y'))+1):
+            year.append(i)
         inv_partner = self.env['account.move'].search(
             [('state', '=', 'posted'), ('move_type', 'in', ['out_invoice', 'out_refund'])]).mapped(
             'partner_id.id')
         if inv_partner:
-            partner_id = self.env['res.partner'].search([('id', 'in', inv_partner)], limit=2)
+            partner_id = self.env['res.partner'].search([('id', 'in', inv_partner)])
             if partner_id:
                 for partner in partner_id:
-                    for y in year:
-                        for m in month:
-                            inv_date = self.env['account.move'].search(
-                                [('state', '=', 'posted'), ('partner_id', '=', partner.id),
-                                 ('move_type', 'in', ['out_invoice', 'out_refund'])])
-                            if inv_date:
-                                for inv in inv_date:
-                                    if m == str(inv.invoice_date.month) and y == str(inv.invoice_date.year):
-                                        msc_id = self.env['customer.statement'].search(
-                                            [('month', '=', m), ('year', '=', y), ('partner_id', '=', partner.id)])
-                                        if msc_id:
-                                            msc_id.create_line()
-                                        else:
-                                            new_msc = self.env['customer.statement'].create({
-                                                'partner_id': partner.id,
-                                                'month': m,
-                                                'year': y,
-                                            })
-                                            new_msc.onchange_month()
-                                            new_msc.create_line()
+                    inv_date = self.env['account.move'].search(
+                        [('state', '=', 'posted'), ('partner_id', '=', partner.id), ('move_type', 'in',
+                                                                                     ['out_invoice', 'out_refund'])])
+                    if inv_date:
+                        for inv in inv_date:
+                            m = str(inv.invoice_date.month)
+                            y = str(inv.invoice_date.year)
+                            msc_id = self.env['customer.statement'].search(
+                                [('month', '=', m), ('year', '=', y), ('partner_id', '=', partner.id)])
+                            if msc_id:
+                                msc_id.create_line()
+                            else:
+                                new_msc = self.env['customer.statement'].create({
+                                    'partner_id': partner.id,
+                                    'month': m,
+                                    'year': y,
+                                      })
+                                new_msc.onchange_month()
+                                new_msc.create_line()
                         # self._cr.commit()
 
 
