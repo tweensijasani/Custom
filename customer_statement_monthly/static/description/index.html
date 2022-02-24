@@ -1,22 +1,397 @@
 <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Monthly Customer Statement</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <section id="sh_module_version">
+        <div class="container">
+            <div class="sh_center text-center" style='margin: 2rem 0;'>
+                <div class="row" style='align-items: center;'>
+                    <div class="col-lg-4 col-md-4 col-sm-12" style='text-align: left;'>
+                        <img src='icon.png' alt='logo' style="width: 80%;">
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-12" style='text-align: right;'>
+                        <span class='btn btn-primary'
+                            style="position: relative; overflow: hidden; border: 1px solid transparent; padding: .375rem .75rem; font-size: 1rem; line-height: 1.5; border-radius: .25rem; background-color: #ee5a24;border-color: #ee5a24;"><i
+                                class='fa fa-check' style="margin-right: 9px;"></i>Community</span>
+                        <span class='btn btn-primary'
+                            style="position: relative; overflow: hidden; border: 1px solid transparent; padding: .375rem .75rem; font-size: 1rem; line-height: 1.5; border-radius: .25rem; background-color: #ee5a24;border-color: #ee5a24;"><i
+                                class='fa fa-check' style="margin-right: 9px;"></i>Enterprise</span>
+                    </div>
+                </div>
+                <div class="oe_span12">
+                  <h2 class="oe_slogan text-center" ><b>Monthly Customer Statement</b> </h2>
+                  <hr style="border: 1px solid;position:relative;width:150px;top:0px;padding:0px;margin-bottom: 2em;">
+                  <h3 class="text-muted text-center">Access monthly customer report for easy analysis</h3>
+                  <div class="oe_centeralign oe_websiteonly">
+                    <a href="http://www.openerp.com/start?app=invoicing" style="background-color:#ee5a24; border: 1px #ee5a24" class="btn btn-primary py-2 px-4 mb-3">Start your free trial
+                    <i class='fa fa-download'></i></a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sh_highlighted_section_main container col-md-12">
+        <div class="container bg-white shadow px-3 py-0 overflow-hidden mb-5" style="border-radius: 2px;">
+            <div class="row">
+                <div class="col-lg-12 align-items-center d-inline-flex align-items-center mb-4 position-relative ">
+                    <div class="pt-4" style="padding-left:20px;">
+                        <h3 style="color:#ee5a24;font-weight: bold;font-size: 22px;" class="mb-3">Why Round Off Value?</h3>
+                        <p style="font-weight:normal; font-size:14px; letter-spacing: 1px;">
+                            <b>Let me first give you an overview of this module.</b><br>
+                            This module will load all invoices and credits notes at one place and calculate the total credit and debit of a customer every month.
+                            It is very tedious work to find all invoices and credit notes of a specific customer of the required month
+                            from all the invoices of various customers and of various time periods. Not only that, once you find them,
+                            you have to manually calculate the total debit and credit for each customer for each month.<br><br>
+                            In order to lessen your work, we have bought this app that will fetch all invoices as well as credit notes of a
+                            specific customer and calculate the total debit and credit with the opening and closing balances for that month.
+                            <span style="color:#ff3300;"><b>This will save you a lot of time, which you can utilize to enhance your business.</b></span><br><br>
+                            There is one more perk of using this app. It allows you to download the monthly customer statement in pdf form,
+                            so that you can easily share it with your customers and save time explaining and analyzing monthly customer balances.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sh_tab_section container mt64 mb32" style="padding: 40px 0px;">
+        <div class="row" style="max-width:1540px; margin:0 auto; border-radius:15px">
+            <ul class="nav nav-tabs justify-content-center" role="tablist"
+                style="padding-bottom:10px; border-bottom:0px solid #aaa; background-color:transparent;margin: 0px auto;">
+                <li class="nav-item"
+                    style="background-color:#ffd1b3; color:#fff; border-radius: 2px; font-weight:600; font-size:14px; margin:0 5px">
+                    <a href="#features" data-toggle="tab" aria-expanded="true" class="nav-link show active"
+                        style="color:#ee5a24; border:2px solid #ee5a24;border-radius: 2px;letter-spacing: 1px;"><img
+                            src="features.png" alt="feature_icon" style="height: 16px;margin-right: 7px;" />
+                        Features</a>
+                </li>
+                <li class="nav-item"
+                    style="background-color:#ffd1b3; color:#fff; border-radius: 2px; font-weight:600; font-size:14px; margin:0 5px">
+                    <a href="#setup" data-toggle="tab" aria-expanded="true" class="nav-link"
+                        style="color:#ee5a24; border:2px solid #ee5a24;border-radius: 2px;letter-spacing: 1px;"><img
+                            src="configuration.png" alt="configuration_icon" style="height: 16px;margin-right: 7px;" />
+                        Set up</a>
+                </li>
+                <li class="nav-item"
+                    style="background-color:#ffd1b3; color:#fff; border-radius: 2px; font-weight:600; font-size:14px; margin:0 5px">
+                    <a href="#workflow" data-toggle="tab" aria-expanded="true" class="nav-link"
+                        style="color:#ee5a24; border:2px solid #ee5a24;border-radius: 2px;letter-spacing: 1px;"><img
+                            src="workflow.png" alt="workflow_icon" style="height: 16px;margin-right: 7px;" />
+                        Work Flow</a>
+                </li>
+            </ul>
+
+            <div class="container-fluid px-0">
+                <div class="tab-content pt-3" id="tabs_content">
+                    <!--Features-->
+                    <div class="tab-pane fade active show" id="features" role="tabpanel"
+                        aria-labelledby="key_feature_tab">
+                        <div class="sh_center text-center mb-5">
+                          <h4 style="font-size:30px; font-weight:600; color:#ee5a24; margin-bottom:10px">Hot Features</h4>
+                            <hr style="width: 100px;border-width: 2px;border-color: #ee5a24;" />
+                        </div>
+                        <div class="row" style="margin:0px auto 0;font-weight:normal; font-size:16px">
+                          <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                            <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #ee5a24; border-bottom:4px solid #ee5a24; background-color:#ffd1b3; border-radius:0.25rem !important; min-height:83px">
+                              <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">
+                                Generates customer's monthly statement
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                            <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #ee5a24; border-bottom:4px solid #ee5a24; background-color:#ffd1b3; border-radius:0.25rem !important; min-height:83px">
+                              <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">
+                                Calculates opening and closing balances
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                            <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #ee5a24; border-bottom:4px solid #ee5a24; background-color:#ffd1b3; border-radius:0.25rem !important; min-height:83px">
+                              <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">
+                                Invoices and credit note's monthly analysis at one place
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                            <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #ee5a24; border-bottom:4px solid #ee5a24; background-color:#ffd1b3; border-radius:0.25rem !important; min-height:83px">
+                              <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">
+                                One time scheduler executed after its installment
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                            <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #ee5a24; border-bottom:4px solid #ee5a24; background-color:#ffd1b3; border-radius:0.25rem !important; min-height:83px">
+                              <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">
+                                Daily scheduler to update records daily
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                            <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #ee5a24; border-bottom:4px solid #ee5a24; background-color:#ffd1b3; border-radius:0.25rem !important; min-height:83px">
+                              <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">
+                                Easy download monthly statement in pdf form
+                              </span>
+                            </div>
+                          </div>
+                        </div><br><br>
+                        <div class="sh_center text-center mb-5">
+                            <h4 style="font-size:30px; font-weight:600; color:#ee5a24; margin-bottom:10px">Detailed Features</h4>
+                            <hr style="width: 100px;border-width: 2px;border-color: #ee5a24;" />
+                        </div>
+                        <div class="tab-pane center">
+                            <ul style="padding:0">
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ee5a24; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    Generate customer's monthly statements with opening and closing balances.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ee5a24; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    One time scheduler will automatically generate monthly statements once at the time of its installment.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ee5a24; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    After which the daily scheduler will update monthly customer statements once every day.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ee5a24; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    You can also manually create monthly statements for specific customers of required month.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ee5a24; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    You only need to fill the month and customer fields.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ee5a24; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    To load the invoices and credit notes, tap on Reload button.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ee5a24; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    All the invoices and credit notes of that particular customer within the mentioned month will be displayed.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ee5a24; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    You can also download the monthly statement.
+                                </li>
+                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#ee5a24; font-weight:600; font-size:18px; padding-right:10px"></span>
+                                    This will make it easier to share monthly statements with customers.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!--Set Up-->
+                    <div class="tab-pane fade" id="setup" role="tabpanel" aria-labelledby="faqs_tab">
+                      <div class="mb48"></div>
+                      <section class="oe_container">
+                          <div class="panel" style="padding-left:75px; padding-right:75px;">
+                              <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #ee5a24; border-bottom:4px solid #ee5a24; border-radius:0.25rem !important; min-height:83px">
+                                  <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">
+                                      <i>To begin with, have the Customer Statement Monthly downloaded in your system.
+                                          For its proper setup, go through the below steps.</i>
+                                  </span>
+                              </div>
+                          </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ee5a24 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ee5a24; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Monthly Customer Statement Module
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="csm_ss_1.png" alt="sales order" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              To begin with, you need to install the Monthly Customer Statement App from Odoo Apps.
+                              It's easy to locate, just search on the name, you can identify it with the Odoolicious logo.
+                              <span style="color:#ff3300;">Hold on, you also need to enable it.</span><br><br>
+                              <b>Apps >> Monthly Customer Statement >> Install</b>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ee5a24 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ee5a24; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Enable this feature
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="csm_ss_7.png" alt="sales order" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              Go to general settings, under Users and Companies select Users.
+                              For a specific user enable Monthly Customer Statement.
+                              Now, you will be able to access this <span style="color:#ff3300;">wonderful feature</span> from the invoicing app. <br>
+                              <b>General settings >> Users and Companies >> Users >> Select_your_user >> Edit >> Enable Monthly Customer Statement</b>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ee5a24 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ee5a24; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Scheduled Action
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="csm_ss_8.png" alt="sales order" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              The one time scheduler executed at the time of installment will automatically generate all monthly customer statements till date.<br>
+                              <span style="color:#ff3300;">Not to worry about new invoices and credit notes created after installing our module,</span>
+                              we have a daily scheduler that can be activated from your general settings.<br><br>
+                              <b>General settings >> Technical >> Scheduled Actions >> Customer Statement: run scheduler daily</b>
+                              <span style="color:#ff3300;">Now you are ready to utilise this feature.
+                                  For more information go through the Work Flow.</span>
+                          </div>
+                        </div>
+                      </section><br>
+                    </div>
+
+                    <!--Work Flow-->
+                    <div class="tab-pane fade" id="workflow" role="tabpanel" aria-labelledby="faqs_tab">
+                      <div class="mb48"></div>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ee5a24 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ee5a24; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Monthly Customer Statement Location
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="csm_ss_1.png" alt="sales order" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              The one time scheduler executed at the time of installment will automatically generate all monthly customer statements till date.<br>
+                              <span style="color:#ff3300;">Not to worry about new invoices and credit notes created after installing our module,</span>
+                              we have a daily scheduler that can be activated from your general settings.<br><br>
+                              <b>General settings >> Technical >> Scheduled Actions >> Customer Statement: run scheduler daily</b>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ee5a24 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ee5a24; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Create Form
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="csm_ss_2.png" alt="" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              You might think of manually creating a monthly statement for a specific customer for a particular month.
+                              <span style="color:#ff3300;">That is possible too!</span> <br>
+                              Go to Monthly Customer Statement and tap on create
+                              to get your customized monthly statement of a customer for the required month.<br><br>
+                              <b>Apps >> invoicing >> reports >> Monthly Customer Statement >> Create</b>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ee5a24 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ee5a24; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Reload button action
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="csm_ss_4.png" alt="" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              <span style="color:#ff3300;">Well, if you are stuck, here is a small guide on filling the form.</span><br>
+                              Under Month field select month and year as required and for Customer field select your customer.
+                              Do not bother about other fields.<br><br>
+                              Once these two fields are set, click on Reload button.
+                              All the invoices and credit notes of that particular customer within the mentioned month will be displayed.
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ee5a24 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ee5a24; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Download in pdf format
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="csm_ss_5.png" alt="sales order" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              <span style="color:#ff3300;">It's not over yet! There is one more thing you might want to know.</span><br>
+                              It also gives you a feature to download the monthly customer statement in pdf form.
+                              This will make it very easy for you to share monthly customer statements with your customers.<br>
+                              To download the report, tap on Print option and select Monthly Customer Statement.<br><br>
+                              <b>Print >> Monthly Customer Statement</b>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="oe_container">
+                        <div class="panel shadow" style="border:2px #ee5a24 solid">
+                          <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:#ee5a24; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                            Monthly customer statement PDF
+                          </div>
+                          <div class="d-flex justify-content-center" style="padding:10px">
+                            <img style="width:70%;overflow:hidden;" class="img-thumbnail" src="csm_ss_6.png" alt="" />
+                          </div>
+                          <div style="padding-bottom: 10px; padding-left: 190px; padding-right: 190px;">
+                              A pdf will be downloaded.<br>
+                              <b>The Monthly Customer Statement will look like this.....</b><br>
+                              This is what companies have longed for. <span style="color:#ff3300;">I bet you would have liked this feature the most.</span><br>
+                          </div>
+                        </div>
+                      </section><br>
+                      <section class="sh_highlighted_section_main container col-md-12">
+                        <div class="container bg-white shadow px-3 py-0 overflow-hidden mb-5" style="border-radius: 2px; border:1px solid #ee5a24; border-bottom:4px solid #ee5a24">
+                            <div class="row">
+                                <div class="col-lg-12 d-flex justify-content-center" style=" background-color:#ffd1b3;">
+                                    <div class="pt-4" style="padding-left:20px;">
+                                        <h5 style="font-size: 20px;" class="mb-3 text-center">
+                                            <i>I hope you have enjoyed our module tour and look forward to use it super soon!!</i>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="oe_container">
+        <div class="oe_row">
+            <div class="d-flex justify-content-center">
+                <h2 class="oe_slogan">Many companies already enjoy it!!</h2>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+<!--
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Monthly Customer Statement</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <section class="oe_container">
+
+        <div style='text-align: right;'>
+            <span class='btn btn-primary' style="position: relative; overflow: hidden; border: 1px solid transparent; padding: .375rem .75rem; font-size: 1rem; line-height: 1.5; border-radius: .25rem; background-color: #007bff;border-color: #007bff;">
+                <i class='fa fa-check' style="margin-right: 9px;"></i>Community</span>
+            <span class='btn btn-primary' style="position: relative; overflow: hidden; border: 1px solid transparent; padding: .375rem .75rem; font-size: 1rem; line-height: 1.5; border-radius: .25rem; background-color: #007bff;border-color: #007bff;">
+                <i class='fa fa-check' style="margin-right: 9px;"></i>Enterprise</span>
+        </div>
         <div class="oe_row oe_spaced">
             <div class="oe_span12">
                 <h2 class="oe_slogan"><b>Monthly Customer Statement</b></h2>
                 <h3 class="oe_slogan">Access monthly customer report for easy analysis</h3>
             </div>
-            <div class="oe_span6">
+            <div class="oe_span9">
                 <div class="oe_demo oe_picture oe_screenshot">
                     <img src="csm_ss_1.png">
                 </div>
             </div>
-            <div class="oe_span6">
+            <div class="oe_span3">
                 <p class="oe_mt32">
                     Manage your monthly reports with no effort.
                     <span style="color:purple;"><b>Generate customer's monthly statements with opening and closing balances.</b></span>
@@ -28,148 +403,262 @@
             </div>
         </div>
     </section>
-    <section class="oe_container oe_dark">
-        <div class="oe_row oe_spaced">
-            <div class="oe_span6">
-                <p class="oe_mt32">
-                    Go to general settings, under Users and Companies select Users.
-                    For a specific user enable Monthly Customer Statement.
-                    Now, you will be able to access this <span style="color:purple;"><b>wonderful feature</b></span> from the invoicing app. <br><br>
-                </p><p>
-                    <b>General settings >> Users and Companies >> Users >> Select_your_user >> Edit >> Enable Monthly Customer Statement</b>
-                </p>
-            </div>
-            <div class="oe_span6">
-                <div class="oe_row_img oe_centered">
-                    <img class="oe_picture oe_screenshot" src="csm_ss_7.png">
+    <section class="sh_highlighted_section_main container col-md-12">
+        <div class="container bg-white shadow px-3 py-0 overflow-hidden mb-5" style="border-radius: 2px;">
+            <div class="row">
+                <div class="col-lg-12 align-items-center d-inline-flex align-items-center mb-4 position-relative ">
+                    <div class="pt-4" style="padding-left:20px;">
+                        <h3 style="color:#2c3782;font-weight: bold;font-size: 22px;" class="mb-3">Why Customer Statement Monthly?</h3>
+                        <p style="font-weight:normal; font-size:14px; letter-spacing: 1px;">
+                            <b>Let me first give you an overview of this module.</b><br>
+                            This module will load all invoices and credits notes at one place and calculate the total credit and debit of a customer every month.
+                            It is very tedious work to find all invoices and credit notes of a specific customer of the required month
+                            from all the invoices of various customers and of various time periods. Not only that, once you find them,
+                            you have to manually calculate the total debit and credit for each customer for each month.<br><br>
+                            In order to lessen your work, we have bought this app that will fetch all invoices as well as credit notes of a
+                            specific customer and calculate the total debit and credit with the opening and closing balances for that month.
+                            <span style="color:purple;"><b>This will save you a lot of time, which you can utilize to enhance your business.</b></span><br><br>
+                            There is one more perk of using this app. It allows you to download the monthly customer statement in pdf form,
+                            so that you can easily share it with your customers and save time explaining and analyzing monthly customer balances.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="oe_row oe_spaced">
-            <div class="oe_span6">
-                <div class="oe_row_img oe_centered">
-                    <img class="oe_picture oe_screenshot" src="csm_ss_8.png">
+    </section>
+    <section class="oe_container d-flex justify-content-center">
+                <div style="width:90%; margin-top:20px">
+                    <div class="card-header shadow-sm p-0" style="font-family:'Open Sans', sans-serif; font-weight:600; font-size:18px; line-height:28px; color:#E0E0E0">
+                        <ul role="tablist" class="nav nav-tabs justify-content-center" data-tabs="tabs">
+                            <li class="nav-item"><a href="#features" class="nav-link active" data-toggle="tab">Features</a></li>
+                            <li class="nav-item"><a href="#setup" class="nav-link" data-toggle="tab">Set Up</a></li>
+                            <li class="nav-item"><a href="#workflow" class="nav-link" data-toggle="tab">Work Flow</a></li>
+                        </ul>
+                    </div>
+                    <div class="shadow-sm card-body tab-content" style="font-weight:400; border-radius:2px; border:1px solid #E0E0E0">
+                    &lt;!&ndash; <div class="shadow-sm card-body tab-content text-center p-0" style="font-weight:400; border-radius: 2px; border: 1px solid #E0E0E0;"> &ndash;&gt;
+                        <div class="tab-pane active" id="features" role="tabpanel">
+                            <div class="container shadow-sm px-4">
+                                <section style="padding-top:30px; background-color:transparent">
+                                     <div class="container">
+                                        <div class="sh_center text-center mb-5">
+                                           <h4 style="font-size:30px; font-weight:600; color:#3363c1; margin-bottom:10px">Hot Features</h4>
+                                           &lt;!&ndash; <hr style="width: 100px;border-width: 2px;border-color: #3363c1;" /> &ndash;&gt;
+                                           <img src="//apps.odoocdn.com/apps/assets/15.0/sh_sales_commission_target/heading.png?4e5e511" alt="heading">
+                                        </div>
+                                        <div class="row">
+                                           <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                                              <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #9ebdfb; border-bottom:4px solid #9ebdfb; background-color:#ebf0fb; border-radius:0.25rem !important; min-height:83px">
+                                                 <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">Generates customer's monthly statement
+                                                 </span>
+                                              </div>
+                                           </div>
+                                           <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                                              <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #9ebdfb; border-bottom:4px solid #9ebdfb; background-color:#ebf0fb; border-radius:0.25rem !important">
+                                                 <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">Calculates opening and closing balances
+                                                 </span>
+                                              </div>
+                                           </div>
+                                           <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                                              <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #9ebdfb; border-bottom:4px solid #9ebdfb; background-color:#ebf0fb; border-radius:0.25rem !important">
+                                                 <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">Invoices and credit note's monthly analysis at one place
+                                                 </span>
+                                              </div>
+                                           </div>
+                                           <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                                              <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #9ebdfb; border-bottom:4px solid #9ebdfb; background-color:#ebf0fb; border-radius:0.25rem !important">
+                                                 <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">One time scheduler executed after its installment
+                                                 </span>
+                                              </div>
+                                           </div>
+                                           <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                                              <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #9ebdfb; border-bottom:4px solid #9ebdfb; background-color:#ebf0fb; border-radius:0.25rem !important">
+                                                 <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">Daily scheduler to update records daily
+                                                 </span>
+                                              </div>
+                                           </div>
+                                           <div class="col-lg-4 col-md-6 col-sm-12 col-12 mb-2">
+                                              <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #9ebdfb; border-bottom:4px solid #9ebdfb; background-color:#ebf0fb; border-radius:0.25rem !important; min-height:83px">
+                                                 <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">Easy download monthly statement in pdf form
+                                                 </span>
+                                              </div>
+                                           </div>
+                                        </div>
+                                     </div>
+                                </section>
+                                <section style="padding-top:50px; background-color:transparent">
+                                     <div class="container">
+                                        <div class="sh_center text-center mb-5">
+                                           <h4 style="font-size:28px; font-weight:600; color:#3363c1; margin-bottom:10px">Detailed Features</h4>
+                                           &lt;!&ndash; <hr style="width: 100px;border-width: 2px;border-color: #3363c1;" /> &ndash;&gt;
+                                           <img src="//apps.odoocdn.com/apps/assets/15.0/sh_sales_commission_target/heading.png?4e5e511" alt="heading">
+                                        </div>
+                                         <div class="tab-pane active">
+                                             <ul style="padding:0">
+                                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#3363c1; font-weight:600; font-size:18px; padding-right:10px"></span>  Generate customer's monthly statements with opening and closing balances.
+                                                </li>
+                                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#3363c1; font-weight:600; font-size:18px; padding-right:10px"></span>  One time scheduler will automatically generate monthly statements once at the time of its installment.
+                                                </li>
+                                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#3363c1; font-weight:600; font-size:18px; padding-right:10px"></span>  After which the daily scheduler will update monthly customer statements once every day.
+                                                </li>
+                                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#3363c1; font-weight:600; font-size:18px; padding-right:10px"></span>  You can also manually create monthly statements for specific customers of required month.
+                                                </li>
+                                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#3363c1; font-weight:600; font-size:18px; padding-right:10px"></span>  You only need to fill the month and customer fields.
+                                                </li>
+                                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#3363c1; font-weight:600; font-size:18px; padding-right:10px"></span>  To load the invoices and credit notes, tap on Reload button.
+                                                </li>
+                                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#3363c1; font-weight:600; font-size:18px; padding-right:10px"></span>  All the invoices and credit notes of that particular customer within the mentioned month will be displayed.
+                                                </li>
+                                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#3363c1; font-weight:600; font-size:18px; padding-right:10px"></span>  You can also download the monthly statement.
+                                                </li>
+                                                <li class="shadow rounded" style="padding:20px; margin-bottom:20px; font-size:16px; color:#212121; font-weight:600; letter-spacing:1px; display:block; border-radius:0.25rem !important"><span class="fa fa-arrow-right" style="color:#3363c1; font-weight:600; font-size:18px; padding-right:10px"></span>  This will make it easier to share monthly statements with customers.
+                                                </li>
+                                             </ul>
+                                         </div>
+                                   </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="tab-pane active" id="setup" role="tabpanel">
+                            <div class="row">
+                                    <div class="container shadow-sm px-4">
+                                        <section class="oe_container">
+                                           <div class="panel" style="padding-left:75px; padding-right:75px;">
+                                               <div class="sh_icon d-flex justify-content-center align-items-center rounded shadow" style="padding:15px; border:1px solid #9ebdfb; border-bottom:4px solid #9ebdfb; background-color:#ebf0fb; border-radius:0.25rem !important; min-height:83px">
+                                                 <span style="color:#212121; font-weight:600; vertical-align:middle; padding-left:10px; text-align:center">
+                                                     To begin with, have the Customer Statement Monthly downloaded in your system.
+                                                     For its proper setup, go through the below steps.
+                                                 </span>
+                                              </div>
+                                               &lt;!&ndash;<div style="padding-left:15px;padding-right:15px;padding-bottom:15px;border:2px blue solid">
+                                                   <b>To begin with, have the Customer Statement Monthly downloaded in your system.
+                                                       For its proper setup, go through the below steps.</b>
+                                               </div>&ndash;&gt;
+                                           </div>
+                                       </section><br>
+                                        <section class="oe_container">
+                                           <div class="panel" style="border:2px blue solid">
+                                               <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:blue; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                                                   To enable this feature activate it from users page
+                                               </div>
+                                               <img style="width:100%" class="oe_picture oe_screenshot" src="csm_ss_7.png" alt="Not found">
+                                               <div style="padding-left:75px;padding-right:75px;padding-bottom:15px">
+                                                   Go to general settings, under Users and Companies select Users.
+                                                   For a specific user enable Monthly Customer Statement.
+                                                   Now, you will be able to access this <span style="color:purple;"><b>wonderful feature</b></span> from the invoicing app. <br>
+                                                   <b>General settings >> Users and Companies >> Users >> Select_your_user >> Edit >> Enable Monthly Customer Statement</b>
+                                               </div>
+                                           </div>
+                                       </section><br>
+                                        <section class="oe_container">
+                                           <div class="panel" style="border:2px blue solid">
+                                               <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:blue; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                                                   Scheduled Action
+                                               </div>
+                                               <img style="width:100%" class="oe_picture oe_screenshot" src="csm_ss_8.png" alt="Not found">
+                                               <div style="padding-left:75px;padding-right:75px;padding-bottom:15px">
+                                                   The one time scheduler executed at the time of installment will automatically generate all monthly customer statements till date.<br>
+                                                   <span style="color:purple;"><b>Not to worry about new invoices and credit notes created after installing our module,</b></span>
+                                                   we have a daily scheduler that can be activated from your general settings.<br>
+                                                   <b>General settings >> Technical >> Scheduled Actions >> Customer Statement: run scheduler daily</b>
+                                               </div>
+                                           </div>
+                                       </section><br>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane active" id="workflow" role="tabpanel">
+                            <div class="row">
+                                    <div class="container shadow-sm px-4">
+                                       <section class="oe_container">
+                                           <div class="panel" style="border:2px blue solid">
+                                               <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:blue; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                                                   Monthly Customer Statement Location
+                                               </div>
+                                               <img style="width:100%" class="oe_picture oe_screenshot" src="csm_ss_1.png" alt="Not found">
+                                               <div style="padding-left:75px;padding-right:75px;padding-bottom:15px">
+                                                   Open invoicing app, under reporting, you will find Monthly Customer Statement.<br>
+                                                   <b>apps >> invoicing >> reports >> Monthly Customer Statement</b><br>
+                                                   You will find customer statements already generated till date,<span style="color:purple;"><b> isn't that amazing?</b></span>
+                                                   Well, this is due to the one time scheduler executed at the time of its installment.
+                                               </div>
+                                           </div>
+                                       </section><br>
+
+                                       <section class="oe_container">
+                                           <div class="panel" style="border:2px blue solid">
+                                               <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:blue; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                                                   Create Form
+                                               </div>
+                                               <img style="width:100%" class="oe_picture oe_screenshot" src="csm_ss_2.png" alt="Not found">
+                                               <div style="padding-left:75px;padding-right:75px;padding-bottom:15px">
+                                                   You might think of manually creating a monthly statement for a specific customer for a particular month.
+                                                   <span style="color:purple;"><b>That is possible too!</b></span> <br>
+                                                   Go to Monthly Customer Statement and tap on create
+                                                   to get your customized monthly statement of a customer for the required month.<br>
+                                                   <b>Apps >> invoicing >> reports >> Monthly Customer Statement >> Create</b>
+                                               </div>
+                                           </div>
+                                       </section><br>
+                                       <section class="oe_container">
+                                           <div class="panel" style="border:2px blue solid">
+                                               <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:blue; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                                                   Reload button action
+                                               </div>
+                                               <img style="width:100%" class="oe_picture oe_screenshot" src="csm_ss_4.png" alt="Not found">
+                                               <div style="padding-left:75px;padding-right:75px;padding-bottom:15px">
+                                                  <span style="color:purple;"><b>Well, if you are stuck, here is a small guide on filling the form.</b></span><br>
+                                                   Under Month field select month and year as required and for Customer field select your customer.
+                                                   Do not bother about other fields.<br>
+                                                   Once these two fields are set, click on Reload button.
+                                                   All the invoices and credit notes of that particular customer within the mentioned month will be displayed.
+                                               </div>
+                                           </div>
+                                       </section><br>
+                                       <section class="oe_container">
+                                           <div class="panel" style="border:2px blue solid">
+                                               <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:blue; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                                                   Download in pdf format
+                                               </div>
+                                               <img style="width:100%" class="oe_picture oe_screenshot" src="csm_ss_5.png" alt="Not found">
+                                               <div style="padding-left:75px;padding-right:75px;padding-bottom:15px">
+                                                   <span style="color:purple;"><b>It's not over yet! There is one more thing you might want to know.</b></span><br>
+                                                   It also gives you a feature to download the monthly customer statement in pdf form.
+                                                   This will make it very easy for you to share monthly customer statements with your customers.<br>
+                                                   To download the report, tap on Print option and select Monthly Customer Statement.<br>
+                                                   <b>Print >> Monthly Customer Statement</b>
+                                               </div>
+                                           </div>
+                                       </section><br>
+                                       <section class="oe_container">
+                                           <div class="panel" style="border:2px blue solid">
+                                               <div class="panel-heading" style="font-size:18px; line-height:30px; background-color:blue; color:white; font-family:'Open Sans', sans-serif; font-weight:600; text-align:center;">
+                                                   Monthly customer statement PDF
+                                               </div>
+                                               <div class="d-flex justify-content-center">
+                                                   <img class="oe_picture oe_screenshot" src="csm_ss_6.png" alt="Not found">
+                                               </div>
+                                               <div style="padding-left:220px;padding-right:75px;padding-bottom:15px">
+                                                   A pdf will be downloaded.<br>
+                                                   <b>The Monthly Customer Statement will look like this.....</b><br>
+                                                    This is what companies have longed for. I bet you would have liked this feature the most.<br>
+                                                   <span style="color:purple;"><b>I hope you have enjoyed our module tour and look forward to use it super soon.</b></span>
+                                               </div>
+                                           </div>
+                                       </section><br>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-            <div class="oe_span6">
-                <p class="oe_mt32">
-                    Now, move to invoicing app, under reporting, you will find Monthly Customer Statement.<br>
-                </p><p>
-                    <b>apps >> invoicing >> reports >> Monthly Customer Statement</b><br><br>
-                </p><p>
-                    You will find customer statements already generated till date, isn't that amazing?
-                    Well, this is due to the one time scheduler executed at the time of its installment.<br><br>
-                </p><p>
-                    <span style="color:purple;"><b>Not to worry about new invoices and credit notes created after installing our module,</b></span>
-                    we have a daily scheduler that can be activated from your general settings.<br>
-                </p><p>
-                    <b>General settings >> Technical >> Scheduled Actions >> Customer Statement: run scheduler daily</b>
-                </p>
-            </div>
-        </div>
-        <div class="oe_row oe_spaced">
-            <div class="oe_span6">
-                <p class="oe_mt32">
-                    You might think of creating a monthly statement for a specific customer for a particular month.
-                    <span style="color:purple;"><b>That is possible too!</b></span> <br><br>
-                </p><p>
-                    Go to Monthly Customer Statement and tap on create
-                    to get your customized monthly statement of a customer for the required month.<br><br>
-                </p><p>
-                    <b>Apps >> invoicing >> reports >> Monthly Customer Statement >> Create</b>
-                </p>
-            </div>
-            <div class="oe_span6">
-                <div class="oe_row_img oe_centered">
-                    <img class="oe_picture oe_screenshot" src="csm_ss_2.png">
-                </div>
-            </div>
-        </div>
-        <div class="oe_row oe_spaced">
-            <div class="oe_span6">
-                <div class="oe_row_img oe_centered">
-                    <img class="oe_picture oe_screenshot" src="csm_ss_4.png">
-                </div>
-            </div>
-            <div class="oe_span6">
-                <p class="oe_mt32">
-                    <span style="color:purple;"><b>Well, if you are stuck, here is a small guide on filling the form.</b></span><br><br>
-                </p><p>
-                    Under Month field select month and year as required and for Customer field select your customer.
-                    Do not bother about other fields.<br><br>
-                </p><p>
-                    Once these two fields are set, click on Reload button.
-                    All the invoices and credit notes of that particular customer within the mentioned month will be displayed.
-                </p>
-            </div>
-        </div>
-        <div class="oe_row oe_spaced">
-            <div class="oe_span6">
-                <p class="oe_mt32">
-                    <span style="color:purple;"><b>It's not over yet! There is one more thing you might want to know.</b></span><br><br>
-                    It also gives you a feature to download the monthly customer statement in pdf form.
-                    This will make it very easier for you to share monthly customer statements with your customers.<br><br>
-                </p><p>
-                    To download the report, tap on Print option and select Monthly Customer Statement.<br>
-                </p><p>
-                    <b>Print >> Monthly Customer Statement</b>
-                </p>
-            </div>
-            <div class="oe_span6">
-                <div class="oe_row_img oe_centered">
-                    <img class="oe_picture oe_screenshot" src="csm_ss_5.png">
-                </div>
-            </div>
-        </div>
-        <div class="oe_row oe_spaced">
-            <div class="oe_span6">
-                <div class="oe_row_img oe_centered">
-                    <img class="oe_picture oe_screenshot" src="csm_ss_6.png">
-                </div>
-            </div>
-            <div class="oe_span6">
-                <p class="oe_mt32">
-                    A pdf will be downloaded.<br><br>
-                    <b>The Monthly Customer Statement will look like this.....</b><br><br>
-                    This is what companies have longed for. I bet you would have liked this feature the most.<br><br>
-                </p><p>
-                    <span style="color:purple;"><b>I hope you have enjoyed our module tour and look forward to use it super soon.</b></span>
-                </p>
-            </div>
-        </div>
     </section>
     <section class="oe_container">
         <div class="oe_row">
             <div class="oe_span12">
-                <h2 class="oe_slogan">Many companies already enjoy it</h2>
-                <h3 class="oe_slogan">Hear what they have to say !</h3>
-            </div>
-            <div class="oe_span6">
-                <div class="oe_quote">
-                    <q>
-                        With Odoo Monthly Customer Statement I keep all the information about debits and credits of customers
-                        in a single place, and share it with my colleagues. It's great and effective.
-                    </q>
-                    <cite class="oe_cite oe_clearfix">
-                        <!--<img class="oe_photo" src="web/static/img/placeholder.png">-->
-                        <div class="oe_author">Claudia Sebastiani</div>
-                        <div class="oe_job">Sales manager at <a href="http://openerp.creativiquadrati.it" target="_blank">CQ Creativi Quadrati</a>.</div>
-                    </cite>
-                </div>
-            </div>
-            <div class="oe_span6">
-                <div class="oe_quote">
-                    <q>
-                        I am surprised by how good Odoo Monthly Customer Statement is. Awesome product.
-                    </q>
-                    <cite class="oe_cite oe_clearfix">
-                        <!--<img class="oe_photo" src="web/static/img/placeholder.png">-->
-                        <div class="oe_author">Stephan Keller</div>
-                        <div class="oe_job">CEO of <a href="http://www.sodexis.com" target="_blank">Sodexis, Inc</a>.</div>
-                    </cite>
-                </div>
+                <h2 class="oe_slogan">Many companies already enjoy it!!</h2>
             </div>
         </div>
     </section>
 </body>
-</html>
+</html>-->

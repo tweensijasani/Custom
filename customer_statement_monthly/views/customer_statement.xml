@@ -66,6 +66,10 @@
                             </tree>
                         </field>
                     </group>
+                    <div name="note_group" class="mt-2 mt-md-0">
+                        <field name="note" nolabel="1" placeholder="Terms and conditions..."/>
+                        <div class="oe_clear"/>
+                    </div>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids"/>

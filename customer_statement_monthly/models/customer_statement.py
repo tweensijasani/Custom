@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import fields, models, api, _
+from odoo.exceptions import ValidationError
 
 import calendar
 from datetime import datetime, date
@@ -28,6 +29,19 @@ class CustomerStatement(models.Model):
     total_credit = fields.Float(compute='_compute_total_credit', string='Total Credit')
     closing_balance = fields.Float(compute='_compute_closing_balance', string='Closing Balance')
     statement_lines = fields.One2many('customer.statement.line', 'statement_id', string='Statements')
+    note = fields.Text('Terms and conditions')
+
+    @api.model
+    def create(self, vals):
+        m = vals.get('month')
+        y = vals.get('year')
+        p = vals.get('partner_id')
+        msc_id = self.env['customer.statement'].search(
+            [('month', '=', m), ('year', '=', y), ('partner_id', '=', p)])
+        if msc_id:
+            raise ValidationError("The record already exists.")
+        else:
+            return super(CustomerStatement, self).create(vals)
 
     @api.depends('month', 'year')
     def _compute_name(self):
@@ -94,7 +108,7 @@ class CustomerStatement(models.Model):
                     for move in payment.move_id.line_ids:
                         if move.account_id.user_type_id.type == 'receivable':
                             send_payment_total = send_payment_total + move.debit
-            opening_balance = (invoice_total +  send_payment_total) - (credit_note_total + receive_payment_total)
+            opening_balance = (invoice_total + send_payment_total) - (credit_note_total + receive_payment_total)
             rec.opening_balance = opening_balance
             return rec
 

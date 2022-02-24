@@ -8,52 +8,31 @@
                     <t t-call="web.external_layout">
                         <div>
                             <table style="border-collapse:collapse;width:100%;">
-                                <tr>
-                                    <td rowspan="2" style="width:50%;">
-                                        <!--<t t-if="res_company.logo">
-                                            <img t-att-src="image_data_uri(res_company.logo)" alt="Logo"
-                                                 style="max-height: 100px"/>
-                                        </t>-->
-                                    </td>
-                                    <td colspan="2" style="width:50%;text-align:right;padding:0px 20px 0px 0px">
-                                        <span style="font-size:30px;">
+                                <tr rowspan="2">
+                                    <td style="text-align:center;">
+                                        <span style="font-size:40px;">
                                             <b>Monthly Customer Statement</b>
                                         </span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width:35%;text-align:right;font-size:20px;">
-                                        From :
-                                    </td>
-                                    <td style="width:15%;text-align:center;">
-                                        <span style="font-size:20px;" t-field="doc.from_date"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="width:50%;text-align:left;">
-                                        <!--<span style="font-size:30px;" t-field="res_company.name"/>-->
-                                    </td>
-                                    <td style="width:35%;text-align:right;font-size:20px;">
-                                        To :
-                                    </td>
-                                    <td style="width:15%;text-align:center;">
-                                        <span style="font-size:20px;" t-field="doc.to_date"/>
+                                    <td style="text-align:right;font-size:20px;">
+                                        Duration : <span style="font-size:20px;" t-field="doc.from_date"/> - <span style="font-size:20px;" t-field="doc.to_date"/>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                         <center>
-                            <br></br>
                             <div class="first-page" style="">
                                 <table style="border-collapse:collapse;width:100%;">
                                     <tr style="">
-                                        <td style="width:40%;font-size:16px;padding:2px 0px 2px 10px;background-color:#4682b4;color:white;">
+                                        <td style="width:40%;font-size:16px;padding:2px 0px 2px 10px;background-color:#669999;color:white;">
                                             <b>Customer Details</b>
                                         </td>
                                         <td style="width:20%;">
 
                                         </td>
-                                        <td style="width:40%;font-size:16px;padding:2px 0px 2px 10px;background-color:#4682b4;color:white;">
+                                        <td style="width:40%;font-size:16px;padding:2px 0px 2px 10px;background-color:#669999;color:white;">
                                             <b>Account Summary</b>
                                         </td>
                                     </tr>
@@ -99,7 +78,7 @@
                                                     <td style="padding:2px 0px 2px 10px;">
                                                         Opening Balance
                                                     </td>
-                                                    <td style="padding:2px 0px 2px 10px;">
+                                                    <td style="padding:2px 0px 2px 10px;text-align:right;">
                                                         <span t-esc="'{:0,.2f}'.format(float(doc.opening_balance))"/>
                                                     </td>
                                                 </tr>
@@ -107,7 +86,7 @@
                                                     <td style="padding:2px 0px 2px 10px;">
                                                         Total Debit
                                                     </td>
-                                                    <td style="padding:2px 0px 2px 10px;">
+                                                    <td style="padding:2px 0px 2px 10px;text-align:right;">
                                                         <span t-esc="'{:0,.2f}'.format(float(doc.total_debit))"/>
                                                     </td>
                                                 </tr>
@@ -115,7 +94,7 @@
                                                     <td style="padding:2px 0px 2px 10px;">
                                                         Total Credit
                                                     </td>
-                                                    <td style="padding:2px 0px 2px 10px;">
+                                                    <td style="padding:2px 0px 2px 10px;text-align:right;">
                                                         <span t-esc="'{:0,.2f}'.format(float(doc.total_credit))"/>
                                                     </td>
                                                 </tr>
@@ -123,7 +102,7 @@
                                                     <td style="padding:2px 0px 2px 10px;">
                                                         Closing Balance
                                                     </td>
-                                                    <td style="padding:2px 0px 2px 10px;">
+                                                    <td style="padding:2px 0px 2px 10px;text-align:right;">
                                                         <span t-esc="'{:0,.2f}'.format(float(doc.closing_balance))"/>
                                                     </td>
                                                 </tr>
@@ -133,7 +112,7 @@
                                 </table>
                             </div>
                             <table style="border-collapse: collapse;border:1px solid black;width:100%;margin-top:20px;font-size:18px;">
-                                <tr style="background-color:#4682b4;color:white;">
+                                <tr style="background-color:#669999;color:white;">
                                     <th style="width:25%;text-align:left;padding:5px;border:1px solid black;">Date
                                     </th>
                                     <th style="width:30%;text-align:left;padding:5px;border:1px solid black;">Name
@@ -215,29 +194,7 @@
                                 <table style="border-collapse:collapse;width:100%;margin-top:10px">
                                     <tr>
                                         <td style="text-align:center;padding:2px 0px 2px 0px;">
-                                            <span>
-                                                Your account balance is
-                                                <b>
-                                                    <span style="font-size:18px;"
-                                                          t-esc="'{:0,.2f}'.format(float(doc.closing_balance))"/>
-                                                </b>
-                                                .
-                                                Please make your payment to cover the balance.
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:center;padding:2px 0px 2px 0px;">
-                                            <span>
-                                                Make all cheques payable to <span t-field="res_company.name"/>.
-                                            </span>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:center;padding:2px 0px 2px 0px;">
-                                            <span style="font-size:18px;font-weight:bold;">
-                                                Thank you for your business!
-                                            </span>
+                                            <b><span t-field="doc.note"/></b>
                                         </td>
                                     </tr>
                                 </table>
